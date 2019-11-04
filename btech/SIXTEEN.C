@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+	int arr[10],i,j,a;
+	clrscr();
+
+	printf("\nEnter the elements of the array(10):");
+	for(i=0;i<10;i++)
+	{
+		scanf("%d",&arr[i]);
+	}
+	for(i=0;i<10;i++)
+	{
+		for(j=i+1;j<10;j++)
+		{
+			if(arr[i]>arr[j])
+			{
+				a=arr[i];
+				arr[i]=arr[j];
+				arr[j]=a;
+			}
+		}
+	}
+	printf("\nSorted array:");
+	for(i=0;i<10;i++)
+	{
+		printf("%d,",arr[i]);
+	}
+	getch();
+}
