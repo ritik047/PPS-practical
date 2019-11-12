@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+	int *p[10],*a,arr[50],size,i;
+	clrscr();
+	printf("\nEnter number of elements:");
+	scanf("%d",&size);
+
+	printf("\nEnter Array elements:");
+	for(i=0;i<size;i++)
+	{
+		scanf("%d",&arr[i]);
+	}
+	for(i=0;i<size;i++)
+	{
+		p[i]=&arr[i];
+	}
+	printf("\nArray of Pointers:");
+	printf("\nPrinting Array using pointers...");
+	for(i=0;i<size;i++)
+	{
+		printf("\n%d",*p[i]);
+	}
+	printf("\nPointer to an array:");
+	a=arr;
+	for(i=0;i<size;i++)
+	{
+		printf("\n%d",*a);
+		a++;
+	}
+	getch();
+}

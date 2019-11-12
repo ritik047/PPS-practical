@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+
+void main()
+{
+	FILE *fp;
+	char str[80];
+	char fname[20];
+	clrscr();
+
+	printf("Enter a filename to create (with extension): ");
+	gets(fname);
+
+	fp = fopen(fname, "w+");
+	if(!fp)
+	{
+		printf("Error in creating the file..!!");
+		exit(1);
+	}
+	printf("The file %s is creted successfully..!!\n", fname);
+
+	while(*str != '\n')
+	{
+		printf("Enter a string (CR to quit):\n");
+		gets(str);
+		strcat(str, "\n");     // adds a newline
+		fputs(str, fp);
+	}
+
+	// now read and display the file
+	rewind(fp);     // reset the file position indicator to start of the file
+	printf("\nReading mode file:");
+	while(!feof(fp))
+	{
+		fgets(str, 79, fp);
+		printf(str);
+	}
+
+	fclose(fp);
+	getch();
+}

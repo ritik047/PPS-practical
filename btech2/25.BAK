@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<conio.h>
+
+union u
+{
+	int num;
+	float flt;
+	char ch;
+	char str[40];
+};
+
+void main()
+{
+	union u u1;
+	clrscr();
+	printf("\nImplementation of Union");
+	printf("\nEnter a string");
+	gets(u1.str);
+	printf("\nEnter a number:");
+	scanf("%d",&u1.num);
+	printf("\nEnter a float number");
+	scanf("%f",&u1.flt);
+	getch();
+	printf("\nString entered:%s",u1.str);
+	printf("\nNumber entered:%d",u1.num);
+	printf("\nFloat number entered:",u1.flt);
+	getch();
+}
